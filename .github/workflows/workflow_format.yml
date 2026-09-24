@@ -1,0 +1,20 @@
+name: Workflow created by ${{github.actor}}
+run-name: ${{github.actor}} created a custom workflow for the ${{github.branch}}
+on:
+  push:
+    branches:
+      - main
+jobs: # the work, split into jobs
+  job-name: # the name of the job
+    if: false  # never runs the job cuz
+    runs-on: ubuntu-latest # what kind of machine to borrow
+    # needs: other-job    # waits for another job first
+    steps: # step by step list ordered list runs from top to bottom. The diff bw a job and steps is that job uses diff machine and runs parallely while step inside a job run in ordered manner in the same machine
+      - name: Step 1 # a label for the log
+      #uses: owner/action@v4   # EITHER: run a ready-made action someone published
+      #with: { … }             #         with these inputs
+
+      # - name: Step 2
+      #   run: some shell command # OR: run your own terminal command
+      #   working-directory: …    #     from this folder
+      #   env: { … }              #     with these environment variables
